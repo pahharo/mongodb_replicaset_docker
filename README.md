@@ -4,16 +4,16 @@
 Docker  
 Alpine Linux image for docker
 
-###Generate MONGODB containers
+### Generate MONGODB containers
 To generate containers you have to build them.
 
 · Inside master folder:
 ```bash
-docker build -t mongodb_master .
+# docker build -t mongodb_master .
 ```
 · Inside slave folder:
 ```bash
-docker build -t mongodb_slave .
+# docker build -t mongodb_slave .
 ```
 
 ### RUN MongoDB ReplicaSet
