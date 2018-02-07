@@ -6,10 +6,10 @@ RUN apk upgrade --update
 RUN apk add --no-cache mongodb
 
 # Create volume
-#RUN mkdir /data /data/db /data/db/log
-VOLUME ["/data/masterdb"]
+VOLUME ["/data/db"]
+
+ADD mongod.conf /etc/mongod.conf
 
 # Create DB and Collection
 EXPOSE 27017
-#CMD ["mongod","--master","--dbpath","/data/masterdb"]
-ENTRYPOINT ["tail","-f","/dev/null"]
+CMD ["mongod","--config","/etc/mongod.conf"]
